@@ -32,13 +32,15 @@ const Navbar = () => {
 
         {/* ===== RIGHT SECTION ===== */}
         <div className="nav-right">
-          <span className="welcome-text">
-            Welcome, Student 🎓
-          </span>
+          <span className="welcome-text">Welcome, Student 🎓</span>
 
           <span className="notification-dot"></span>
 
           <div className="profile-circle" title="My Profile"></div>
+
+          <button className="login-btn" onClick={() => navigate("/login")}>
+            Login / Sign Up
+          </button>
         </div>
       </nav>
     </header>
