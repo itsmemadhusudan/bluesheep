@@ -1,0 +1,223 @@
+/* ===== Global Container ===== */
+.auth-container {
+  display: flex;
+  height: 100vh;
+  background: #f7faff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Left Side ===== */
+.auth-left {
+  flex: 1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  position: relative;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.back-link {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  color: #0056ff;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.auth-illustration {
+  text-align: center;
+}
+
+.auth-illustration img {
+  width: 70%;
+  max-width: 350px;
+  margin-bottom: 1rem;
+}
+
+.auth-illustration h3 {
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.auth-illustration p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* ===== Right Side ===== */
+.auth-right {
+  flex: 1;
+  background: linear-gradient(135deg, #ffffff 60%, #e8f0ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 1.5rem;
+  color: #111;
+  font-weight: 600;
+}
+
+/* ===== Input Fields ===== */
+.input-group {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 0.6rem 0;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.3s;
+}
+
+.input-group i {
+  color: #0056ff;
+  margin-right: 0.8rem;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
+  color: #333;
+  background: transparent;
+}
+
+/* ===== Login Options ===== */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.forgot-link {
+  color: #0056ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===== Login Button ===== */
+.login-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #0056ff, #007bff);
+  border: none;
+  padding: 0.9rem;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 86, 255, 0.4);
+}
+
+/* ===== Divider ===== */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  color: #777;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 40%;
+  background: #e0e0e0;
+  position: absolute;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* ===== Google Button ===== */
+.google-btn {
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+  background: #f7f7f7;
+}
+
+/* ===== Signup Link ===== */
+.signup-text {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signup-link {
+  color: #00b300;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-left,
+  .auth-right {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .auth-illustration img {
+    width: 50%;
+  }
+
+  .login-card {
+    margin: 2rem auto;
+  }
+}

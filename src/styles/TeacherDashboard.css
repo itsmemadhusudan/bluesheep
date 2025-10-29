@@ -1,0 +1,289 @@
+/* ===== LAYOUT ===== */
+.teacher-dashboard-layout {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f8fc;
+}
+
+/* ===== NAVBAR ===== */
+.teacher-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-left h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0048ff;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.welcome-text {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Notification */
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-icon i {
+  font-size: 1.3rem;
+  color: #0048ff;
+}
+
+.notif-dot {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  width: 9px;
+  height: 9px;
+  background-color: #ff3b3b;
+  border-radius: 50%;
+}
+
+/* Profile */
+.profile-container {
+  position: relative;
+}
+
+.profile-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0056ff, #007bff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-circle:hover {
+  transform: scale(1.1);
+}
+
+.profile-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 180px;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+  z-index: 200;
+}
+
+.profile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-menu li {
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-menu li:hover {
+  background: #f1f5ff;
+  color: #0048ff;
+}
+
+/* ===== BODY LAYOUT ===== */
+.teacher-body {
+  display: flex;
+  flex: 1;
+}
+
+/* ===== SIDEBAR ===== */
+.teacher-sidebar {
+  width: 230px;
+  background: #e6e8ed;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 80px);
+}
+
+.teacher-sidebar button {
+  background: transparent;
+  border: none;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.teacher-sidebar button:hover {
+  background: #d9dbe0;
+}
+
+.teacher-sidebar button.active {
+  background: #0056ff;
+  color: #fff;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  margin-left: 1rem;
+  margin-top: 0.3rem;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #444;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.dropdown-menu li:hover {
+  background: #cfd3dc;
+  color: #0056ff;
+}
+
+/* ===== CONTENT ===== */
+.teacher-content {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+.teacher-content h3 {
+  font-size: 1.4rem;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.teacher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.8rem;
+}
+
+.tile {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tile i {
+  font-size: 2.3rem;
+  color: #0056ff;
+  margin-bottom: 0.8rem;
+}
+
+.tile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 86, 255, 0.2);
+}
+
+.tile h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.4rem;
+}
+
+.tile p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ===== CONTENT BOX ===== */
+.content-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .teacher-body {
+    flex-direction: column;
+  }
+
+  .teacher-sidebar {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    box-shadow: none;
+  }
+
+  .teacher-content {
+    padding: 1.5rem;
+  }
+}
