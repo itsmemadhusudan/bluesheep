@@ -5,238 +5,24 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* ===== NAVBAR ===== */
-.dashboard-navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  padding: 0.8rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  animation: fadeDown 0.5s ease;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.nav-logo {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.nav-left h2 {
-  color: #0048ff;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-/* ===== Center Section ===== */
-.nav-center {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  flex: 1;
-  justify-content: center;
-  position: relative;
-}
-
-/* ===== Browse Dropdown ===== */
-.browse-container {
-  position: relative;
-}
-
-.browse-btn {
-  background: transparent;
-  border: 1px solid #d9e0f7;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: all 0.3s ease;
-}
-
-.browse-btn:hover {
-  background: #f0f4ff;
-  border-color: #0056ff;
-  color: #0056ff;
-}
-
-.browse-menu {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  background: #fff;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  animation: fadeIn 0.25s ease;
-  width: 210px;
-  z-index: 10;
-}
-
-.browse-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.browse-menu li {
-  padding: 0.9rem 1rem;
-  font-size: 0.95rem;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.browse-menu li:hover {
-  background: #f1f5ff;
-  color: #0056ff;
-}
-
-/* ===== Search Bar ===== */
-.search-bar {
-  background: #f5f7ff;
-  border: 1px solid #dce2f9;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  padding: 0.4rem 1rem;
-  width: 250px;
-  transition: all 0.3s ease;
-}
-
-.search-bar:focus-within {
-  box-shadow: 0 0 0 2px #0056ff40;
-}
-
-.search-icon {
-  font-size: 0.95rem;
-  color: #555;
-  margin-right: 0.6rem;
-}
-
-.search-bar input {
-  border: none;
-  outline: none;
-  background: transparent;
-  flex: 1;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-/* ===== Right Section ===== */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.welcome-text {
-  font-size: 1rem;
-  color: #333;
-  font-weight: 500;
-}
-
-/* ===== Notification ===== */
-.notification-icon {
-  position: relative;
-  cursor: pointer;
-}
-
-.notification-icon i {
-  font-size: 1.3rem;
-  color: #0048ff;
-}
-
-.notif-dot {
-  position: absolute;
-  top: -3px;
-  right: -4px;
-  width: 9px;
-  height: 9px;
-  background-color: #ff3b3b;
-  border-radius: 50%;
-}
-
-/* ===== Profile Circle ===== */
-.profile-container {
-  position: relative;
-}
-
-.profile-circle {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0056ff, #007bff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.profile-circle:hover {
-  transform: scale(1.1);
-}
-
-.profile-circle i {
-  font-size: 1.2rem;
-}
-
-/* ===== Profile Dropdown ===== */
-.profile-menu {
-  position: absolute;
-  top: 55px;
-  right: 0;
-  background: #fff;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  width: 180px;
-  animation: fadeIn 0.3s ease;
-  z-index: 100;
-}
-
-.profile-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.profile-menu li {
-  padding: 0.9rem 1.2rem;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.profile-menu li:hover {
-  background: #f1f5ff;
-  color: #0048ff;
-}
-
-/* ===== Dashboard Cards ===== */
+/* ===== Dashboard Section ===== */
 .dashboard {
   text-align: center;
   padding: 4rem 3rem;
 }
 
+.dashboard h1 {
+  font-size: 2rem;
+  color: #0033a0;
+}
+
+.dashboard-subtitle {
+  color: #555;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+/* ===== Dashboard Cards ===== */
 .dashboard-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -272,27 +58,4 @@
 .card p {
   font-size: 0.95rem;
   color: #555;
-}
-
-/* ===== Animations ===== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

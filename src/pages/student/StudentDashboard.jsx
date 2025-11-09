@@ -1,118 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import logo from "../../assets/logo.png";
-import "../../styles/dashboard.css";
+import React from "react";
+import Navbar from "../../components/Navbar"; 
+import "../../styles/dashboard.css"; 
 
 const StudentDashboard = () => {
-  const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [browseOpen, setBrowseOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    navigate("/"); // redirect to landing page
-  };
-
-  const handleProfileClick = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const handleBrowseClick = () => {
-    setBrowseOpen(!browseOpen);
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    alert(`Searching for: ${searchTerm}`);
-  };
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (!e.target.closest(".profile-container") && !e.target.closest(".browse-container")) {
-        setMenuOpen(false);
-        setBrowseOpen(false);
-      }
-    };
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
-  }, []);
-
   return (
     <div className="dashboard-container">
-      {/* ===== NAVBAR ===== */}
-      <nav className="dashboard-navbar">
-        <div className="nav-left">
-          <img src={logo} alt="BlueSheep Logo" className="nav-logo" />
-          <h2>BlueSheep University</h2>
-        </div>
+      {/* Navbar imported separately */}
+      <Navbar />
 
-        <div className="nav-center">
-          {/* ===== Browse Dropdown ===== */}
-          <div className="browse-container">
-            <button className="browse-btn" onClick={handleBrowseClick}>
-              Browse <i className="fa-solid fa-chevron-down"></i>
-            </button>
-            {browseOpen && (
-              <div className="browse-menu">
-                <ul>
-                  <li>Computer Science</li>
-                  <li>Business & Management</li>
-                  <li>Design & Creativity</li>
-                  <li>Engineering</li>
-                  <li>Language & Communication</li>
-                </ul>
-              </div>
-            )}
-          </div>
-
-          {/* ===== Search Bar ===== */}
-          <form className="search-bar" onSubmit={handleSearch}>
-            <i className="fa-solid fa-magnifying-glass search-icon"></i>
-            <input
-              type="text"
-              placeholder="Search Courses..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </form>
-        </div>
-
-        <div className="nav-right">
-          <span className="welcome-text">Welcome, Student 🎓</span>
-
-          <div className="notification-icon">
-            <i className="fa-regular fa-bell"></i>
-            <span className="notif-dot"></span>
-          </div>
-
-          {/* Profile Circle */}
-          <div className="profile-container">
-            <div className="profile-circle" onClick={handleProfileClick}>
-              <i className="fa-regular fa-user"></i>
-            </div>
-
-            {menuOpen && (
-              <div className="profile-menu">
-                <ul>
-                  <li onClick={() => navigate("/profile")}>
-                    <i className="fa-regular fa-user"></i> My Profile
-                  </li>
-                  <li onClick={() => navigate("/change-password")}>
-                    <i className="fa-solid fa-lock"></i> Change Password
-                  </li>
-                  <li onClick={handleLogout}>
-                    <i className="fa-solid fa-right-from-bracket"></i> Logout
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
-        </div>
-      </nav>
-
-      {/* ===== DASHBOARD ===== */}
+      {/* ===== DASHBOARD MAIN CONTENT ===== */}
       <div className="dashboard">
         <h1>Student Dashboard</h1>
         <p className="dashboard-subtitle">
